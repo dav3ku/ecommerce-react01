@@ -1,13 +1,6 @@
 import React from "react";
 import { Routes, Route, Link } from "react-router-dom";
-import {
-  Container,
-  Navbar,
-  Button,
-  Nav,
-  NavDropdown,
-  Form,
-} from "react-bootstrap";
+import { Container, Navbar, Button, Nav, Form } from "react-bootstrap";
 
 import Home from "./Components/Home/Home";
 import { SignUp } from "./Components/SignUp/SignUp";
@@ -32,11 +25,11 @@ function App() {
               <Button variant="outline-success">Buscar</Button>
             </Form>
             <Nav className="my-2 my-lg-0" navbarScroll>
-              <Nav.Link>
-                <Link to="/">Acceder</Link>
+              <Nav.Link as={Link} to="/">
+                Acceder
               </Nav.Link>
-              <Nav.Link href="#action2" className="outline-success">
-                <Link to="/signup">Registrarme</Link>
+              <Nav.Link as={Link} to="/signup">
+                Registrarme
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>
