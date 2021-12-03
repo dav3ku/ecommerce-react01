@@ -1,0 +1,6 @@
+#box {
+  border-radius: 25px;
+  -webkit-box-shadow: 7px 7px 16px 0px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 7px 7px 16px 0px rgba(0, 0, 0, 0.7);
+  box-shadow: 7px 7px 16px 0px rgba(0, 0, 0, 0.7);
+}

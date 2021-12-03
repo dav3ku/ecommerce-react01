@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Container, Form, Button, Row, Col } from "react-bootstrap";
 
+import "./SignUp.css";
+
 var register = {
   name: "",
   lastName: "",
@@ -26,7 +28,7 @@ export const SignUp = (props) => {
   return (
     <Container>
       <Row className="justify-content-md-center">
-        <Col md="auto">
+        <Col md="auto" id="box">
           <h2 className="text-center">Registro</h2>
           <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="formBasicName">
