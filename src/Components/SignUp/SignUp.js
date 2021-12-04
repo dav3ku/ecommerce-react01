@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Container, Form, Button, Row, Col } from "react-bootstrap";
 
+import Cover from "../Cover/Cover";
 import "./SignUp.css";
 
 var register = {
