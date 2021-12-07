@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { Container, Form, Button, Row, Col } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-
-import "./SignUp.css";
+import { Link } from "react-router-dom";
 
 export const SignUp = (props) => {
   const {
@@ -21,7 +20,7 @@ export const SignUp = (props) => {
         <Col md="auto" id="box">
           <h2 className="text-center">Registro</h2>
           <Form onSubmit={handleSubmit(onSubmit)}>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Group className="mb-3">
               <Row>
                 <Col>
                   <Form.Control
@@ -68,7 +67,7 @@ export const SignUp = (props) => {
               Registrarme
             </Button>
           </Form>
-          <p className="text-center">Iniciar sesión</p>
+          <Link to="/login">Iniciar sesión</Link>
         </Col>
       </Row>
     </Container>
