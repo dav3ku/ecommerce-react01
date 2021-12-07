@@ -1,29 +1,18 @@
 import React, { useState } from "react";
 import { Container, Form, Button, Row, Col } from "react-bootstrap";
+import { useForm } from "react-hook-form";
 
-import Cover from "../Cover/Cover";
 import "./SignUp.css";
 
-var register = {
-  name: "",
-  lastName: "",
-  email: "",
-  password: "",
-};
-
 export const SignUp = (props) => {
-  const [form, setForm] = useState(register);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
-  const handleChange = (e) => {
-    setForm({
-      ...form,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Datos", form);
+  const onSubmit = (datas) => {
+    console.log("Datos", datas);
   };
 
   return (
@@ -31,48 +20,48 @@ export const SignUp = (props) => {
       <Row className="justify-content-md-center">
         <Col md="auto" id="box">
           <h2 className="text-center">Registro</h2>
-          <Form onSubmit={handleSubmit}>
-            <Form.Group className="mb-3" controlId="formBasicName">
-              <Form.Label>Nombre</Form.Label>
-              <Form.Control
-                name="name"
-                type="text"
-                placeholder="Ingresa tu nombre"
-                onChange={handleChange}
-              />
-            </Form.Group>
-
-            <Form.Group className="mb-3" controlId="formBasicLastName">
-              <Form.Label>Apellido</Form.Label>
-              <Form.Control
-                name="lastName"
-                type="text"
-                placeholder="Ingresa tu apellido"
-                onChange={handleChange}
-                value={form.lastName}
-              />
+          <Form onSubmit={handleSubmit(onSubmit)}>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Row>
+                <Col>
+                  <Form.Control
+                    name="name"
+                    type="text"
+                    placeholder="Ingresa tu nombre"
+                    {...register("name", { required: true })}
+                  />
+                  {errors.name && <span>Campo requerido</span>}
+                </Col>
+                <Col>
+                  <Form.Control
+                    name="lastName"
+                    type="text"
+                    placeholder="Ingresa tu apellido"
+                    {...register("lastName", { required: true })}
+                  />
+                  {errors.lastName && <span>Campo requerido</span>}
+                </Col>
+              </Row>
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Email</Form.Label>
               <Form.Control
                 name="email"
                 type="email"
                 placeholder="tunombre@ejemplo.com"
-                onChange={handleChange}
-                value={form.email}
+                {...register("email", { required: true })}
               />
+              {errors.email && <span>Campo requerido</span>}
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Label>Contraseña</Form.Label>
               <Form.Control
                 name="password"
                 type="password"
                 placeholder="Ingresa contraseña"
-                onChange={handleChange}
-                value={form.password}
+                {...register("password", { required: true })}
               />
+              {errors.password && <span>Campo requerido</span>}
             </Form.Group>
 
             <Button variant="primary" type="submit">
