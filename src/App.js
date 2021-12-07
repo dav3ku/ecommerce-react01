@@ -2,8 +2,9 @@ import React from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import { Container, Navbar, Button, Nav, Form } from "react-bootstrap";
 
-import Home from "./Components/Home/Home";
+import { Home } from "./Components/Home/Home";
 import { SignUp } from "./Components/SignUp/SignUp";
+import { LogIn } from "./Components/LogIn/LogIn";
 
 import "./App.css";
 
@@ -12,7 +13,9 @@ function App() {
     <>
       <Navbar bg="primary" expand="lg">
         <Container fluid>
-          <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
+          <Navbar.Brand as={Link} to="/">
+            Mi tienda
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Form className="d-flex">
@@ -25,7 +28,7 @@ function App() {
               <Button variant="outline-success">Buscar</Button>
             </Form>
             <Nav className="my-2 my-lg-0" navbarScroll>
-              <Nav.Link as={Link} to="/">
+              <Nav.Link as={Link} to="/login">
                 Acceder
               </Nav.Link>
               <Nav.Link as={Link} to="/signup">
@@ -38,6 +41,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="signup" element={<SignUp />} />
+        <Route path="login" element={<LogIn />} />
       </Routes>
     </>
   );
