@@ -7,3 +7,22 @@
   box-shadow: 7px 7px 16px 0px rgba(0, 0, 0, 0.7);
   background-color: white;
 }
+
+.imgProduct {
+  padding: 20px;
+  height: 300px;
+  object-fit: scale-down;
+}
+
+.card {
+  border-radius: 1rem !important;
+  margin: 30px 3px 0 3px;
+}
+
+.card:hover {
+  border-radius: 1.35rem !important;
+  margin: 28px 2px 0 2px;
+  -webkit-box-shadow: 3px 3px 13px 0px rgba(0, 0, 0, 0.301);
+  -moz-box-shadow: 3px 3px 13px 0px rgba(0, 0, 0, 0.301);
+  box-shadow: 3px 3px 13px 0px rgba(0, 0, 0, 0.301);
+}
