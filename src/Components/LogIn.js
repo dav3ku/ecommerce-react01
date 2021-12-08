@@ -40,11 +40,17 @@ export const LogIn = (props) => {
               {errors.password && <span>Campo requerido</span>}
             </Form.Group>
 
-            <Button variant="primary" type="submit">
-              Acceder
-            </Button>
+            <Row xs={1}>
+              <Col className="text-center">
+                <Button variant="primary" type="submit">
+                  Acceder
+                </Button>
+              </Col>
+              <Col className="text-center">
+                <Link to="/signup">Registrarme</Link>
+              </Col>
+            </Row>
           </Form>
-          <Link to="/signup">Registrarme</Link>
         </Col>
       </Row>
     </Container>
